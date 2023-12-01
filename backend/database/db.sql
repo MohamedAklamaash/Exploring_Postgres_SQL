@@ -3,7 +3,7 @@ CREATE TABLE restaurants(
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     location VARCHAR(50) NOT NULL,
-    price_range BIGINT NOT NULL
+    price_range BIGINT NOT NULL CHECK(price_range >= 10)
 );
 
 INSERT INTO restaurants (name,location,price_range)
