@@ -1,10 +1,13 @@
-CREATE TABLE products(
+
+CREATE TABLE restaurants(
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    phone VARCHAR(50) UNIQUE 
+    location VARCHAR(50) NOT NULL,
+    price_range BIGINT NOT NULL
 );
 
-ALTER TABLE products
-ADD COLUMN on_sale boolean NOT NULL;
-
+INSERT INTO restaurants (name,location,price_range)
+VALUES
+('Burmy Food','Peelamedu',1000),
+('Starr Grill','Peelamedu',100),
+('KFC','Fun Mall',2000);
