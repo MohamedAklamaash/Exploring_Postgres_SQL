@@ -3,13 +3,14 @@ const app = express();
 const http = require("node:http");
 const server = http.createServer(app);
 const cors = require("cors");
+const morgan = require("morgan");
 require("dotenv").config();
-app.use(cors({
-    origin:"http://localhost:3000",
-    allowedHeaders:true,
-    credentials:true
-}));
-app.use(express.urlencoded({extended:true}))
+const helmet = require("helmet");
+app.use(cors());
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(helmet());
+app.use(morgan("dev"));
 const routes_v1 = require("./routes/yelp_v1_routes");
 app.use("/api/v1",routes_v1);
 server.listen(process.env.PORT,()=>{
