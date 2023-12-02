@@ -1,7 +1,7 @@
 
 const check = async (req, res, next) => {
   try {
-    console.log("Caaling func");
+
   } catch (error) {
     console.log("error in check func", error);
     return res
