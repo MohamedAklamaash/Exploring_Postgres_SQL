@@ -1,7 +1,10 @@
+import LoginPage from "./screens/LoginPage"
 
 const App = () => {
   return (
-    <div>App</div>
+    <div className=" text-center">App
+    <LoginPage/>
+    </div>
   )
 }
 
