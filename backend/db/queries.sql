@@ -8,6 +8,6 @@ CREATE TABLE restaurants(
 
 INSERT INTO restaurants (name,location,price_range)
 VALUES
-('Burmy Food','Peelamedu',1000),
+('Heena Kitchen','MtP',10000000),
 ('Starr Grill','Peelamedu',100),
 ('KFC','Fun Mall',2000);
