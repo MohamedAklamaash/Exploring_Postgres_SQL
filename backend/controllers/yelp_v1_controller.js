@@ -1,12 +1,11 @@
-
-const check = async (req, res, next) => {
+const db = require("../db");
+const check = async (req, res) => {
   try {
-
+    const data = await db.query("SELECT * FROM restaurants");
+    return res.status(200).json({success:true,data:data.rows});
   } catch (error) {
-    console.log("error in check func", error);
-    return res
-      .status(500)
-      .json({ success: false, error: "Internal Server Error" });
+    console.log("Error in check function", error);
+    res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 };
 
@@ -17,6 +16,7 @@ const createRestraunt = (req, res) => {
 
 const getAllRestraunt = async (req, res) => {
   try {
+    return res.send("Hello");
   } catch (error) {}
 };
 

@@ -15,6 +15,9 @@ app.use(helmet());
 app.use(morgan("dev"));
 const routes_v1 = require("./routes/yelp_v1_routes");
 app.use("/api/v1",routes_v1);
+app.get("/",(req,res)=>{
+    return res.send("aklamaash")
+})
 server.listen(process.env.PORT,()=>{
     console.log(`Server is running on port ${process.env.PORT}`);
 });

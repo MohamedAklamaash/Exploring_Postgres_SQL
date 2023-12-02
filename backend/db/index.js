@@ -1,25 +1,11 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  user: `${process.env.PGUSER}`,
-  password: `${process.env.PGPASSWORD}`,
-  database: `${process.env.PGDATABASE}`,
+  user: `postgres`,
+  password: `akla123%`,
+  database: `yelp`,
   port: process.env.PGPORT,
-  host: `${process.env.PGHOST}`,
+  host: `localhost`,
 });
 
-(async () => {
-  const client = await pool.connect();
-  try {
-    const { rows } = await client.query("SELECT * FROM restaurants");
-    console.log(rows[0]);
-    console.log(rows);
-  } catch (error) {
-    console.log("error while trying to connect");
-  } finally {
-    client.release();
-  }
-})();
-
-
-module.exports = { query: (text, params) => pool.query(text, params) };
+module.exports = { query: (text, params) => pool.query(text,params) };
