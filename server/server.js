@@ -18,6 +18,7 @@ app.use("/api/v1",routes_v1);
 app.get("/",(req,res)=>{
     return res.send("aklamaash")
 });
+
 process.on("exit",()=>{
     console.log("Server shutting down!");
 })
