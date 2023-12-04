@@ -90,13 +90,13 @@ const getOneRestraunt = async (req, res) => {
 
 const searchRestraunt = async(req,res)=>{
   const {restraunt} = req.body;
-  const {data} = await db.query(`SELECT name FROM restaurants WHERE name ILIKE ${restraunt}%`,);
+  const data = await db.query(`SELECT * FROM restaurants WHERE name ILIKE '${restraunt}%'`);
+  const {rows} = data;
   if( data === undefined)
   {
     return res.status(404).json({success:false,msg:"No Data Found"});
   }
-  console.log(data);
-  return res.status(200).json({success:true,data});
+  return res.status(200).json({success:true,data:rows});
 }
 
 module.exports = {

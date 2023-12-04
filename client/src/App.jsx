@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import LoginPage from "./pages/LoginPage";
 import UpdateDetailsPage from "./pages/UpdateDetailsPage";
 import CreateNewRestraunt from "./pages/CreateNewRestraunt";
+import SearchResults from "./pages/SearchResults";
 
 const App = () => {
   const [userData, setUserData] = useState("");
@@ -36,6 +37,7 @@ const App = () => {
           />
           <Route path="/updateRestraunt/:id" element={<UpdateDetailsPage />} />
           <Route path="/createnew" element={<CreateNewRestraunt/>}/>
+          <Route path="/search" element={<SearchResults/>}/>
         </Routes>
         <Footer />
       </Router>
