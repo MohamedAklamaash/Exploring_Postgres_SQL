@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
-const Navbar = ({name}) => {
+const Navbar = () => {
   const [searchKey, setsearchKey] = useState("");
   const navigate = useNavigate();
   return (
@@ -37,6 +37,11 @@ const Navbar = ({name}) => {
               onChange={(e) => {
                 setsearchKey(e.target.value);
               }}
+              onKeyUpCapture={(event) => {
+                if (event.key === "Enter") {
+                  navigate(`/search?searchkey=${searchKey}`);
+                }
+              }}
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +50,7 @@ const Navbar = ({name}) => {
               stroke-width="1.5"
               stroke="currentColor"
               className="w-6 h-6 cursor-pointer"
-              onClick={()=>{
+              onClick={() => {
                 navigate(`/search?searchkey=${searchKey}`);
               }}
             >

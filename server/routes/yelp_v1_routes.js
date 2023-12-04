@@ -16,6 +16,6 @@ router.route("/createNewRestraunt").post(createRestraunt);
 router.route("/updateRestraunt/:id").put(updateRestraunt);
 router.route("/deleteRestraunt/:id").delete(deleteRestraunt);
 router.route("/getRestrauntDetails/:id").get(getOneRestraunt);
-router.route("/searchRestraunts").get(searchRestraunt);
+router.route("/searchRestraunts").post(searchRestraunt);
 
 module.exports = router;
