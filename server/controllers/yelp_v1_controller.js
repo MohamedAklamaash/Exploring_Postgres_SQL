@@ -69,7 +69,6 @@ const deleteRestraunt = async (req, res) => {
         msg: "Cannot delete an Restraunt that doesn't exist",
       });
     }
-    console.log(data);
     return res
       .status(201)
       .json({ success: true, msg: "Data deleted successfully!" });
@@ -89,6 +88,17 @@ const getOneRestraunt = async (req, res) => {
   } catch (error) {}
 };
 
+const searchRestraunt = async(req,res)=>{
+  const {restraunt} = req.body;
+  const {data} = await db.query(`SELECT name FROM restaurants WHERE name ILIKE ${restraunt}%`,);
+  if( data === undefined)
+  {
+    return res.status(404).json({success:false,msg:"No Data Found"});
+  }
+  console.log(data);
+  return res.status(200).json({success:true,data});
+}
+
 module.exports = {
   check,
   createRestraunt,
@@ -96,4 +106,5 @@ module.exports = {
   updateRestraunt,
   deleteRestraunt,
   getOneRestraunt,
+  searchRestraunt
 };

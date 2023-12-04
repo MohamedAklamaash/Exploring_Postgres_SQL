@@ -7,7 +7,9 @@ const morgan = require("morgan");
 require("dotenv").config();
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
-app.use(cors());
+app.use(cors({
+    origin:"http://localhost:5173",
+}));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
