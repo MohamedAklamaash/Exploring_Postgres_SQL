@@ -22,7 +22,7 @@ const SearchResults = () => {
   if (data.length === 0) {
     return (
       <div className=" mt-[40vh] flex items-center justify-center">
-        <div>
+        <div className=" shadow-xl md:translate-x-4 md:translate-y-4 text-lg font-montserrat p-10  bg-secondary-400  ">
             No data Found
         </div>
       </div>

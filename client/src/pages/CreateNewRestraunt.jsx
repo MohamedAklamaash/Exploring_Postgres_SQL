@@ -57,7 +57,7 @@ const CreateNewRestraunt = () => {
           />
         </div>
         <div className=" flex w-4/6 justify-end items-center">
-          <button onClick={()=>handleSumbit()} className="btn-31">
+          <button onClick={()=>handleSumbit()} className="btn-31 hover:text-[black]">
             Submit
           </button>
         </div>
